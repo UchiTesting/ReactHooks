@@ -19,7 +19,7 @@ const App = () => {
   useEffect(() => {
     (query.text === "")
       ? setFilteredData(data.filter(record => !(!record.stocked && query.stockOnly)))
-      : setFilteredData(data.filter(record => !(!record.stocked && query.stockOnly) && record.name.includes(query.text)));
+      : setFilteredData(data.filter(record => !(!record.stocked && query.stockOnly) && record.name.toLowerCase().includes(query.text.toLowerCase())));
   }, [query]);
 
   return (
