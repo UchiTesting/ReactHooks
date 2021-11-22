@@ -2,14 +2,12 @@ import React, { useState, useEffect } from "react";
 import CategoryDataTable from "./CategoryDataTable";
 
 
-const ResultSet = (props) => {
+const ResultSet = ({ data }) => {
     const [availableCategories, setAvailableCategories] = useState([]);
 
     useEffect(() => {
-        setAvailableCategories([...new Set(props.data.map(item => item.category))]);
-    }, []);
-
-
+        setAvailableCategories([...new Set(data.map(item => item.category))]);
+    }, [data]);
 
     return (
         <React.Fragment>
@@ -22,7 +20,7 @@ const ResultSet = (props) => {
                 </thead>
 
                 {availableCategories.map((item) => {
-                    const filteredData = props.data.filter(record => record.category === item);
+                    const filteredData = data.filter(record => record.category === item);
                     return <CategoryDataTable key={item} categoryName={item} items={filteredData} />
                 })}
 
