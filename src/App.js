@@ -10,10 +10,10 @@ const App = () => {
 
   const handleQueryChange = (e) => {
     if (e.nativeEvent instanceof InputEvent)
-      setQuery({ text: e.target.value, stockOnly: query.stockOnly });
+      setQuery({ ...query, text: e.target.value });
 
     if (e.nativeEvent instanceof PointerEvent || e.nativeEvent instanceof MouseEvent)
-      setQuery({ stockOnly: e.target.checked, text: query.text });
+      setQuery({ ...query, stockOnly: e.target.checked });
   }
 
   useEffect(() => {
