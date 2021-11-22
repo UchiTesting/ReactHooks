@@ -12,7 +12,7 @@ const App = () => {
     if (e.nativeEvent instanceof InputEvent)
       setQuery({ text: e.target.value, stockOnly: query.stockOnly });
 
-    if (e.nativeEvent instanceof PointerEvent)
+    if (e.nativeEvent instanceof PointerEvent || e.nativeEvent instanceof MouseEvent)
       setQuery({ stockOnly: e.target.checked, text: query.text });
   }
 
