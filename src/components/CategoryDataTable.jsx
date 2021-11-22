@@ -3,11 +3,6 @@ import CategoryHeader from "./CategoryHeader";
 import DataLine from "./DataLine";
 
 const CategoryDataTable = (props) => {
-    useEffect(() => {
-        console.log('CDT => ', props);
-
-    })
-
     const { categoryName, items } = props;
 
     return (

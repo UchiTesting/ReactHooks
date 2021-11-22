@@ -26,7 +26,6 @@ const App = () => {
     <div className="truc">
       <SearchBar onQueryChange={handleQueryChange} />
       <ResultSet data={filteredData} />
-      {console.log(data)}
     </div>
   );
 }
