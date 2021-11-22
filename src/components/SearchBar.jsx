@@ -1,12 +1,12 @@
 import React from "react";
 
-const SearchBar = () => {
+const SearchBar = ({ onQueryChange }) => {
 
 
     return (
         <form>
-            <input type="text" placeholder="Search items here..." style={{ width: "94%", backgroundColor: "yellow", margin: "5px" }} />
-            <input type="checkbox" id="onlyInStockCheck" />
+            <input type="text" placeholder="Search items here..." onChange={onQueryChange} style={{ width: "94%", color: "black", backgroundColor: "yellow", margin: "5px" }} />
+            <input type="checkbox" id="onlyInStockCheck" onChange={onQueryChange} />
             <label htmlFor="onlyInStockCheck">Only In-Stock</label>
         </form>
     )
